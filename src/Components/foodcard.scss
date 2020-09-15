@@ -1,0 +1,140 @@
+.container {
+    background-color: #ffe7ce;
+    height: 100vh;
+    overflow: hidden;
+
+    display: grid;
+    place-items: center;
+}
+
+.foodCard {
+    width: 100%;
+    // margin: 2rem;
+    // height: 20rem;
+    height: auto;
+    background-color: white;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    display: grid;
+
+    grid-auto-rows: minmax(2rem, 10rem) minmax(0, auto) auto;
+
+    box-shadow: 0 0.2rem 0.6rem 0rem rgba(0,0,0,0.2), 0 0.1rem 0.2rem 0rem rgba(0,0,0,0.2);
+
+
+    &.expand > &__description {
+
+        font-size: 1.7rem;
+    }
+
+    grid-gap: 1rem;
+    padding: 2rem 2.5rem;
+
+    border: 1px solid black;
+
+    &__top-wrapper {
+        display: flex;
+        justify-content: space-between;
+        // flex-direction: row-reverse;
+        grid-column: 1 / 6;
+    }
+    &.reverse > &__top-wrapper {
+        flex-direction: row-reverse;
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        max-width: 10rem;
+        max-height: 10rem;
+        // grid-column: 1 / 2;
+        // grid-row: 1 / 2;
+
+        box-shadow: 0 .1rem .1rem rgba(0,0,0,.6)
+    }
+
+    &__info-box {        
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        width: 75%;
+        // border: 1px solid black;
+        // grid-column: 2 / 6;
+
+        border-radius: 5px;
+        padding: 0 1.5rem;
+        box-shadow: 0 0rem 0.2rem rgba(0,0,0,.4);
+    }
+    &__info-item {
+        flex: 0 0 50%;
+
+        &--who {
+            text-align: right;
+        }
+
+        &--location {
+            text-align: right;
+        }
+    }
+
+
+    &__name {
+        margin: 0;
+
+        flex: 0 0 50%;
+    }
+
+    &__quantity {
+
+    }
+
+    &__who {
+        margin: 0;
+        flex: 0 0 50%;
+        text-align: right;
+    }
+
+    &__what {
+        margin: 0;
+        flex: 0 0 50%;
+    }
+
+    &__location {
+        margin: 0;
+
+    }
+
+    &__description{
+        font-size: 0rem;
+        transition: all .2s;
+        overflow: hidden;
+        max-height: 100%;
+        padding: 1rem;
+
+        flex: 0 0 50%;
+        grid-column: 1 / 6;
+        grid-row: 2 / 3;
+
+
+        font-weight: 300;
+        line-height: 1.6;
+
+    }
+
+    &__button {
+        border: 1px solid rgba(0,0,0,.8);
+        border-radius: 5px;
+        height: 3.2rem;
+        grid-row: 3 / 4;
+        cursor: pointer;
+
+        &:active {
+            // border: inset 5px solid rgba(0,0,0,.8);
+            box-shadow: inset 0rem .1rem .1rem 0 rgba(0,0,0,.8);
+            background-color: #dedede;
+        }
+    }
+}
