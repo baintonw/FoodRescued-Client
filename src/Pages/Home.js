@@ -32,8 +32,9 @@ const Home = () => {
                     </div>
                 </header>
                 <div className="content">
-                <h3 className="food-container__title">See available food near you:</h3>
                     <div className="food-container">
+                        <h3 className="food-container__title">See available food near you:</h3>
+
                         <FoodCard></FoodCard>
                         <FoodCard></FoodCard>
                         <FoodCard></FoodCard>
