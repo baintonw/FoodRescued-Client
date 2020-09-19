@@ -14,6 +14,7 @@ $light-grey: #f1f1f1;
 .header {
     width: 100%;
     padding: 2rem 4rem;
+    margin-bottom: 3rem;
     transition: all .2s;
 
     display: flex;
@@ -27,9 +28,10 @@ $light-grey: #f1f1f1;
     &__logo {
         width: 12rem;
         height: 12rem;
+        // border: 1px solid black;
         // margin: 2rem 4rem;
 
-        background-image: url(../images/banana-coloured.svg);
+        background-image: url(../images/big-egg.svg);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
