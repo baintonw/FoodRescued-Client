@@ -39,7 +39,7 @@ const FoodCard = () => {
     <button onClick={(e) => toggleReversed(!reversed)} className="foodCard__button">{'Reverse'}</button>
     
             </div>
-    gi
+    
     )
 }
 
