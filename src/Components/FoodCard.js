@@ -19,7 +19,7 @@ const FoodCard = () => {
     const [reversed, toggleReversed] = useState(false)
 
     return (
-        
+    
             <div className={"foodCard" + (expanded ? " expand" : '') + (reversed ? " reverse" : ' ')}>
                 <div className="foodCard__top-wrapper">
                     <img className="foodCard__image" src="https://picsum.photos/200"></img>
@@ -39,7 +39,7 @@ const FoodCard = () => {
     <button onClick={(e) => toggleReversed(!reversed)} className="foodCard__button">{'Reverse'}</button>
     
             </div>
-    
+    gi
     )
 }
 

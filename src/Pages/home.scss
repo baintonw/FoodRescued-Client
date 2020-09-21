@@ -105,8 +105,18 @@ $corn: rgba(242, 232, 109, 1);
         margin: 0rem;
         font-size: 2rem;
         font-weight: 700;
-        text-decoration: obliques;
+        // text-decoration: obliques;
+        &::after {
+            content: "";
+            display: block;
+            margin-top: .25rem;
+            width: 33%;
+            height: 3px;
+            background-color: rgba(0,0,0,.8);
+        }
     }
+
+  
     
     box-shadow: 0rem .2rem .8rem rgba(0,0,0,.6);
     border-radius: 10px;
@@ -131,5 +141,29 @@ $corn: rgba(242, 232, 109, 1);
     border-radius: 10px;
     background-color: $white;
     box-shadow: 0rem .2rem .8rem rgba(0,0,0,.6);
+
+    &__title {
+        margin: 1.5rem 0 0 1.5rem;
+        font-size: 2rem;
+        font-weight: 800;
+        // margin-bottom: 1rem;
+        // border-bottom: 1px solid red;
+        
+        &::after {
+            content: "";
+            display: block;
+            margin-top: .25rem;
+            width: 32%;
+            height: 3px;
+            background-color: rgba(0,0,0,.8);
+        }
+
+    }
+
+    &__message {
+        line-height: 1.8;
+        font-size: 1.4rem;
+        // color: salmon;
+    }
 
 }
