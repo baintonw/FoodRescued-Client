@@ -22,7 +22,6 @@ $corn: rgba(242, 232, 109, 1);
 .header {
     width: 100%;
     padding: 2rem 4rem;
-    margin-bottom: 3rem;
     transition: all .2s;
     display: flex;
     justify-content: space-between;
@@ -33,8 +32,6 @@ $corn: rgba(242, 232, 109, 1);
     &__logo {
         width: 12rem;
         height: 12rem;
-        // border: 1px solid black;
-        // margin: 2rem 4rem;
 
         background-image: url(../images/big-egg.svg);
         background-repeat: no-repeat;
@@ -47,10 +44,12 @@ $corn: rgba(242, 232, 109, 1);
         width: 40%;
         height: 6.9rem;
         align-self: flex-end;
-        // border: 2px solid black;
     }
 
     &__nav-btns {
+
+
+
         display: flex;
         justify-content: space-between;
         list-style: none;
@@ -60,14 +59,12 @@ $corn: rgba(242, 232, 109, 1);
         &--btn {
             cursor: pointer;
             color: $primary-color;
-            // box-shadow: 0rem .1rem .2rem rgba(0,0,0,1);
             transition: all .2s;
             &::after {
                 content: "";
                 display: block;
                 height: 4px;
                 width: 0;
-                // transform: translateX(100%);
                 transition: all .2s;
 
                 background-color: black;
@@ -78,17 +75,16 @@ $corn: rgba(242, 232, 109, 1);
                 display: block;
                 height: 4px;
                 width: 100%;
-                // transform: translateX(-100%);
-
                 background-color: black;
             }
         }
+
+        
     }
 }
 
 //Content
 .content {
-    padding: 1rem 2rem;
     display: grid;
     grid-template-columns: 1fr 30rem;
     // grid-auto-rows: 1fr;
