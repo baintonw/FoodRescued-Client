@@ -38,7 +38,6 @@ const Home = () => {
                     <div className="map-container">
                         <Map></Map>
                     </div>
-                    
                 <footer></footer>
             </div>
     )

@@ -32,8 +32,11 @@ import bear from '../resources/icons/bear.svg'
 //Variables
 const libraries = ["places"]
 const mapContainerStyle = {
-    width: `100vw`,
-    height: `100vh`,
+    // width: `100vw`,
+    // height: `100vh`,
+    // Fill container in this case ".map" the top-level div
+    width: `100%`,
+    height: `100%`,
 }
 const center = {
     lat: 40.730610,
@@ -47,7 +50,7 @@ const options = {
 }
 
 const Map = () => {
-    const {isLoaded, loadError } = useLoadScript({
+    const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_KEY,
         libraries,
     })
@@ -72,14 +75,13 @@ const Map = () => {
     if (!isLoaded) return "Loading maps..."
 
     return (
-        <div>
-            <h1>
-                Bears <span role="img" aria-label="bear">💀</span>
-                
-            </h1>
+        <div className="map" style={{
+            width: `100%`,
+            height: `100%`,
+        }}>
             <GoogleMap 
                 mapContainerStyle={mapContainerStyle} 
-                zoom={11} 
+                zoom={13} 
                 center={center}
                 options={options}
                 onClick={onMapClick}
@@ -89,7 +91,7 @@ const Map = () => {
                         key={marker.time.toISOString()}
                         position={{ lat: marker.lat, lng: marker.lng }}
                         icon={{
-                            url: '../src/resources/icons/bear.svg',
+                            // url: '../src/resources/icons/bear.svg',
                             url: bear,
                             scaledSize: new window.google.maps.Size(30, 30),
                             origin: new window.google.maps.Point(0, 0),
