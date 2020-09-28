@@ -11,6 +11,7 @@ import Layout from "../Containers/Layout"
 
 //Components
 import FoodCard from "../Components/FoodCard"
+import Map from "../Components/GoogleMap"
 
 const Home = () => {
     return (
@@ -34,9 +35,10 @@ const Home = () => {
                         </ul>
                     </div>
                 </header>
-                <div className="content">
+                    <div className="map-container">
+                        <Map></Map>
+                    </div>
                     
-                </div>
                 <footer></footer>
             </div>
     )

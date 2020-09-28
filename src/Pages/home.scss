@@ -33,7 +33,7 @@ $corn: rgba(242, 232, 109, 1);
         width: 12rem;
         height: 12rem;
 
-        background-image: url(../images/big-egg.svg);
+        background-image: url(../resources/images/big-egg.svg);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -85,8 +85,7 @@ $corn: rgba(242, 232, 109, 1);
 
 //Content
 .content {
-    display: grid;
-    grid-template-columns: 1fr 30rem;
+
     // grid-auto-rows: 1fr;
     // grid-auto-columns: 20rem;
     
@@ -162,4 +161,13 @@ $corn: rgba(242, 232, 109, 1);
         // color: salmon;
     }
 
+}
+
+.map-container {
+
+    // margin: 0 auto;
+    width: 60rem;
+    height: 60rem;
+    border: 2px solid black;
+    background-color: transparent;
 }
