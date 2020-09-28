@@ -27,6 +27,10 @@ import mapStyles from "./mapStyles"
 
 //Icons
 import bear from '../resources/icons/bear.svg'
+import carrot from '../resources/icons/carrot.svg'
+import broccoli from '../resources/icons/broccoli.svg'
+import banana from '../resources/icons/banana.svg'
+
 
 
 //Variables
@@ -78,7 +82,7 @@ const Map = () => {
         <div className="map" style={{
             width: `100%`,
             height: `100%`,
-            boxShadow: `0 0.4rem .6rem rgba(0,0,0, .6)`,
+            boxShadow: `0 0.8rem 1.6rem rgba(0,0,0, .6), 0 .2rem .3rem rgba(0,0,0,1)`,
         }}>
             <GoogleMap 
                 mapContainerStyle={mapContainerStyle} 
@@ -92,7 +96,8 @@ const Map = () => {
                         key={marker.time.toISOString()}
                         position={{ lat: marker.lat, lng: marker.lng }}
                         icon={{
-                            url: bear,
+                            // url: bear,
+                            url: carrot,
                             scaledSize: new window.google.maps.Size(30, 30),
                             origin: new window.google.maps.Point(0, 0),
                             anchor: new window.google.maps.Point(15, 15),
