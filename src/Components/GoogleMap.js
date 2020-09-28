@@ -78,6 +78,7 @@ const Map = () => {
         <div className="map" style={{
             width: `100%`,
             height: `100%`,
+            boxShadow: `0 0.4rem .6rem rgba(0,0,0, .6)`,
         }}>
             <GoogleMap 
                 mapContainerStyle={mapContainerStyle} 
@@ -91,7 +92,6 @@ const Map = () => {
                         key={marker.time.toISOString()}
                         position={{ lat: marker.lat, lng: marker.lng }}
                         icon={{
-                            // url: '../src/resources/icons/bear.svg',
                             url: bear,
                             scaledSize: new window.google.maps.Size(30, 30),
                             origin: new window.google.maps.Point(0, 0),

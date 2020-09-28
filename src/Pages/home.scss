@@ -16,6 +16,7 @@ $corn: rgba(242, 232, 109, 1);
 .home-page {
     font-family: 'Nunito', sans-serif;
     background-color: $light-grey;
+    background-color: inherit;
 }
 
 //Header
@@ -25,7 +26,7 @@ $corn: rgba(242, 232, 109, 1);
     transition: all .2s;
     display: flex;
     justify-content: space-between;
-    box-shadow: 0rem .2rem .8rem rgba(0,0,0,.6);
+    box-shadow: 0rem .1rem .2rem rgba(0,0,0,.2);
 
     background-color: $white;
 
@@ -164,8 +165,9 @@ $corn: rgba(242, 232, 109, 1);
 }
 
 .map-container {
-    margin: 0 auto;
-    border: 4px solid salmon;
+    box-sizing: border-box;
+    margin: 10rem auto;
+    // border: 4px solid salmon;
     padding: 2rem 6rem;
     width: 120rem;
     height: 50rem;
