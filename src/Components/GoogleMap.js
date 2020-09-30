@@ -53,7 +53,14 @@ const options = {
     zoomControl: true,
 }
 
-const Map = () => {
+const Map = (props) => {
+    //if user is logged in this sets the center coordinates on the user's home address
+    // if (props.currentUser && props.currentUser.user.logged_in) {
+    //     const userData = props.currentUser.user
+    //     center.lat = userData.latitude
+    //     center.lgn = userData.longitude
+    // }
+
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_KEY,
         libraries,

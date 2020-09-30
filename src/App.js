@@ -22,9 +22,9 @@ class App extends React.Component {
     this.setState({
       currentUser: user
     }, () => {
-      localStorage.authentication_token = user.user.authentication_token
+      localStorage.authentication_token = this.state.currentUser.user.authentication_token
     })
-  };
+  }
 
   clearUser = () => {
     this.setState({
@@ -32,7 +32,7 @@ class App extends React.Component {
     }, () => {
       localStorage.clear()
     })
-  };
+  }
 
   render() {
     return (
@@ -50,9 +50,7 @@ class App extends React.Component {
             <Route 
               path="/signin"
               render={()=>
-                <SignIn 
-                  setUser={this.setUser} 
-                />
+                <SignIn setUser={this.setUser} />
               }
             />
           </Switch>
