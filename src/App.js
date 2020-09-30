@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 //Pages
 import Home from './Pages/Home'
@@ -25,30 +24,39 @@ class App extends React.Component {
     }, () => {
       localStorage.authentication_token = user.user.authentication_token
     })
-  }
+  };
 
   clearUser = () => {
     this.setState({
       currentUser: null
-    }), () => {
+    }, () => {
       localStorage.clear()
-    }
-  }
+    })
+  };
 
   render() {
     return (
-      <Router>
         <div className="App">
           <Switch>
-            <Route path="/">
-              <Home></Home>
-            </Route>
-            <Route path="/signin">
-              <SignIn setUser={this.setUser}></SignIn>
-            </Route>
+            <Route 
+              path="/home"
+              render={() =>
+                <Home 
+                  currentUser={this.state.currentUser} 
+                  clearUser={this.clearUser}
+                />
+              }
+            />
+            <Route 
+              path="/signin"
+              render={()=>
+                <SignIn 
+                  setUser={this.setUser} 
+                />
+              }
+            />
           </Switch>
         </div>
-      </Router>
     )
   }
 }

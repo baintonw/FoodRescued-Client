@@ -1,4 +1,5 @@
-import {Component} from "react";
+import React, {Component} from "react";
+import {Redirect} from 'react-router-dom';
 
 //Styles
 import './signin.scss'
@@ -10,7 +11,8 @@ class SignIn extends Component {
         address: "",
         city: "",
         stateInits: "",
-        zip: ""
+        zip: "",
+        redirect: false
     }
 
 
@@ -46,6 +48,7 @@ class SignIn extends Component {
                     alert(response.errors)
                 } else {
                     this.props.setUser(response)
+                    this.setState({redirect: true})
                 }
             })
     }
@@ -72,39 +75,55 @@ class SignIn extends Component {
                     alert(response.errors)
                 } else {
                     this.props.setUser(response)
+                    this.setState({redirect: true})
                 }
             })
     }
 
     render () {
+
+        if (this.state.redirect) {
+            return <Redirect push to="/home" />
+        }
+
         return (
             <div className="signIn">
                 <div className="box">
                     <input type="checkbox" id="toggle" className="box__toggle" hidden />
-                    <img className="box__image" src="https://picsum.photos/300" />
+                    <img className="box__image" src="https://picsum.photos/300" alt="missing" />
 
                     {/* Sign up form */}
-                    <form className="form form__register" action="">
+                    <form className="form form__register" action="" onSubmit={this.handleSignup}>
                         <h1 className="form__title">Sign Up</h1>
-                        {/* User */}
+                        {/* Username */}
                         <div className="form__helper">
-                            <input className="form__input" id="new-user" type="text" name="user" placeholder="User"></input>
-                            <label className="form__label" for="new-user">User</label>
-                        </div>
-                        {/* Email */}
-                        <div className="form__helper">
-                            <input className="form__input" type="email" name="email" id="email" placeholder="Email"></input>
-                            <label className="form__label" for="email">Email</label>
+                            <input className="form__input" id="username" type="text" name="username" placeholder="Username" onChange={this.handleChange}></input>
+                            <label className="form__label" for="username">User</label>
                         </div>
                         {/* Password */}
                         <div className="form__helper">
-                            <input className="form__input" type="password" name="password" id="new-user-password" placeholder="Password"></input>
-                            <label className="form__label" for="new-user-password">Password</label>
+                            <input className="form__input" type="password" name="password" id="password" placeholder="Password" onChange={this.handleChange}></input>
+                            <label className="form__label" for="password">Password</label>
                         </div>
-                        {/* Confirm Password */}
+                        {/* Address */}
                         <div className="form__helper">
-                            <input className="form__input" type="password" name="password" id="confirm-password" placeholder="Confirm Password"></input>
-                            <label className="form__label" for="confirm-password">Confirm Password</label>
+                            <input className="form__input" type="text" name="address" id="new-user-address" placeholder="Address" onChange={this.handleChange}></input>
+                            <label className="form__label" for="address">Address</label>
+                        </div>
+                        {/* City */}
+                        <div className="form__helper">
+                            <input className="form__input" type="text" name="city" id="city" placeholder="City" onChange={this.handleChange}></input>
+                            <label className="form__label" for="city">City</label>
+                        </div>
+                        {/* State */}
+                        <div className="form__helper">
+                            <input className="form__input" type="text" name="stateInits" id="stateInits" placeholder="State" onChange={this.handleChange}></input>
+                            <label className="form__label" for="stateInits">State</label>
+                        </div>
+                        {/* Zip */}
+                        <div className="form__helper">
+                            <input className="form__input" type="text" name="zip" id="zip" placeholder="Zip" onChange={this.handleChange}></input>
+                            <label className="form__label" for="zip">Zip</label>
                         </div>
 
                         {/* Submit Button */}
@@ -117,20 +136,20 @@ class SignIn extends Component {
                     {/* ---------------------- */}
 
                     {/* Sign In form (default) */}
-                    <form className="form form__register" action="">
+                    <form className="form form__register" action="" onSubmit={this.handleLogin}>
                         <h1 className="form__title">Sign In</h1>
 
                         {/* User */}
                         <div className="form__helper">
-                            <input className="form__input" id="new-user" type="text" name="user" placeholder="User"></input>
-                            <label className="form__label" for="new-user">User</label>
+                            <input className="form__input" id="username" type="text" name="username" placeholder="Username" onChange={this.handleChange}></input>
+                            <label className="form__label" for="username">User</label>
                         </div>
 
                         {/* Password */}
                         <div className="form__helper">
-                            <input className="form__input" type="password" name="password" id="new-user-password"
-                                placeholder="Password"></input>
-                            <label className="form__label" for="new-user-password">Password</label>
+                            <input className="form__input" type="password" name="password" id="password"
+                                placeholder="Password" onChange={this.handleChange}></input>
+                            <label className="form__label" for="password">Password</label>
                         </div>
 
                         {/* Submit Button */}
@@ -138,7 +157,6 @@ class SignIn extends Component {
                         <p className="form__text">Don't have an account?</p>
                         <label for="toggle" className="form__link">Sign Up!</label>
                     </form>
-
                 </div>
             </div>
         )
