@@ -13,23 +13,44 @@ import Layout from './Containers/Layout'
 //Components
 import SignIn from './Components/SignIn'
 
-function App() {
-  return (
-    
+class App extends React.Component {
+
+  state = {
+    currentUser: null
+  }
+
+  setUser = (user) => {
+    this.setState({
+      currentUser: user
+    }, () => {
+      localStorage.authentication_token = user.user.authentication_token
+    })
+  }
+
+  clearUser = () => {
+    this.setState({
+      currentUser: null
+    }), () => {
+      localStorage.clear()
+    }
+  }
+
+  render() {
+    return (
       <Router>
         <div className="App">
           <Switch>
-              <Route path="/home">              
-                  <Home></Home>
-              </Route>
+            <Route path="/">
+              <Home></Home>
+            </Route>
             <Route path="/signin">
-              <SignIn></SignIn>
+              <SignIn setUser={this.setUser}></SignIn>
             </Route>
           </Switch>
         </div>
       </Router>
-    
-  )
+    )
+  }
 }
 
 export default App;
