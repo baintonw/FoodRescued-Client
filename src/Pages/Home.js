@@ -17,7 +17,8 @@ const Home = () => {
     return (
             <div className="home-page">
                 <header className="header">
-                    <div className="header__logo"></div>
+                    <div className="header__title">Food Rescued</div>
+                    {/* <div className="header__logo"></div> */}
                     <div className="header__nav-bar">
                         <ul className="header__nav-btns">
                             <li className="header__nav-btns--btn">
