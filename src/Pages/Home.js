@@ -36,9 +36,13 @@ const Home = () => {
                         </ul>
                     </div>
                 </header>
-                    <div className="map-container">
-                        <Map></Map>
+                    <div className="content-wrapper">
+                        <div className="map-container">
+                            <Map>
+                            </Map>
+                        </div>
                     </div>
+                    {/* <hr></hr> */}
                 <footer></footer>
             </div>
     )
