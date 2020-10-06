@@ -37,6 +37,7 @@ const Home = () => {
                     </div>
                 </header>
                     <div className="content-wrapper">
+                        {/* <h2>Find food in your area: </h2> */}
                         <div className="map-container">
                             <Map>
                             </Map>
