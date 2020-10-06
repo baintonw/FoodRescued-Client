@@ -1,17 +1,19 @@
-import React from "react"
+import React from "react";
+
+import { Link } from "react-router-dom";
 
 //Resources
 
-import logo from "../resources/images/banana-coloured.svg"
+import logo from "../resources/images/banana-coloured.svg";
 //Styles
-import "./home.scss"
+import "./home.scss";
 
 //Containers
-import Layout from "../Containers/Layout"
+import Layout from "../Containers/Layout";
 
 //Components
-import FoodCard from "../Components/FoodCard"
-import Map from "../Components/GoogleMap"
+import FoodCard from "../Components/FoodCard";
+import Map from "../Components/GoogleMap";
 
 const Home = () => {
     return (
@@ -21,15 +23,21 @@ const Home = () => {
                     {/* <div className="header__logo"></div> */}
                     <div className="header__nav-bar">
                         <ul className="header__nav-btns">
-                            <li className="header__nav-btns--btn">
-                                Map
-                            </li>
-                            <li className="header__nav-btns--btn">
-                                Find
-                            </li>
+                            <Link to="/" style={{ textDecoration: `none`,}}>
+                                <li className="header__nav-btns--btn">
+                                    Map
+                                </li>
+                            </Link>
+                            <Link to="/find" style={{ textDecoration: `none`,}}>
+                                <li className="header__nav-btns--btn">
+                                    Find
+                                </li>
+                            </Link>
+                            <Link to="/give" style={{ textDecoration: `none`,}}>
                             <li className="header__nav-btns--btn">
                                 Give
                             </li>
+                            </Link>
                             <li className="header__nav-btns--btn">
                                 History
                             </li>

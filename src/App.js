@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 //Pages
 import Home from './Pages/Home'
+import FindPage from './Pages/Find'
+
 
 //Containers
 
@@ -18,14 +20,19 @@ function App() {
     
       <Router>
         <div className="App">
-              <Route path="/">              
-                  <Home></Home>
-              </Route>
+          <Switch>
             <Route path="/signin">
               <SignIn></SignIn>
             </Route>
-          
+            <Route path="/find" component={FindPage}>
+              <FindPage></FindPage>
+            </Route>
+            <Route path="/">              
+                  <Home></Home>
+            </Route>
+          </Switch>
         </div>
+
       </Router>
     
   )
