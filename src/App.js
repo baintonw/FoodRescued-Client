@@ -21,6 +21,9 @@ import Layout from './Containers/Layout'
 //Components
 import SignIn from './Components/SignIn'
 
+//Icons
+import broccoli from './resources/icons/broccoli.svg'
+
 function App() {
   useEffect(() => {
     addResponseMessage('Hello, welcome to Food Rescued! How can I help you today?');
@@ -48,6 +51,9 @@ function App() {
           </Switch>
           <Widget
             handleNewUserMessage={handleNewUserMessage}
+            profileAvatar={broccoli}
+            title={"FoodRescued Chat"}
+            subtitle={"Connect and trade!"}
           >
           </Widget>
         </div>
