@@ -33,13 +33,13 @@ const Home = (props) => {
         })
     }
 
-    let conditionalLink = props.currentUser && props.currentUser.logged_in 
-                        ?
-                        <Link to="/home" onClick={handleLogout}>
-                            Logout {props.currentUser.user.username}
-                        </Link>
-                        :
-                        <Link to="/signin">Sign Up/Login</Link>
+    const renderLoginOrLogout = props.currentUser && props.currentUser.logged_in 
+                                ?
+                                <Link to="/home" onClick={handleLogout}>
+                                    Logout {props.currentUser.user.username}
+                                </Link>
+                                :
+                                <Link to="/signin">Sign Up/Login</Link>
 
     return (
         <div className="home-page">
@@ -60,7 +60,7 @@ const Home = (props) => {
                             History
                     </li>
                         <li>
-                            {conditionalLink}
+                            {renderLoginOrLogout}
                         </li>
                     </ul>
                 </div>
