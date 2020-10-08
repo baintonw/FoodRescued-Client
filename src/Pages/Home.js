@@ -1,18 +1,19 @@
-import React from "react"
-import {Link} from "react-router-dom"
+import React from "react";
+
+import { Link } from "react-router-dom";
 
 //Resources
 
-import logo from "../resources/images/banana-coloured.svg"
+import logo from "../resources/images/banana-coloured.svg";
 //Styles
-import "./home.scss"
+import "./home.scss";
 
 //Containers
-import Layout from "../Containers/Layout"
+import Layout from "../Containers/Layout";
 
 //Components
-import FoodCard from "../Components/FoodCard"
-import Map from "../Components/GoogleMap"
+import FoodCard from "../Components/FoodCard";
+import Map from "../Components/GoogleMap";
 
 const Home = (props) => {
     const handleLogout = () => {
@@ -65,8 +66,20 @@ const Home = (props) => {
                     </ul>
                 </div>
             </header>
-            <div className="map-container">
-                <Map currentUser={props.currentUser}></Map>
+
+            <div className="home-page">
+                <Layout>
+                    <div className="content-wrapper">
+                        {/* <h2>Find food in your area: </h2> */}
+                        <div className="map-container">
+                            <Map>
+                            </Map>
+                        </div>
+                    </div>
+                    {/* <hr></hr> */}
+                    
+                </Layout>
+
             </div>
             <footer></footer>
         </div>

@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
-import { Route, Switch } from "react-router-dom";
+
+//Icons
+import broccoli from './resources/icons/broccoli.svg'
+
+//React Router
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+
+//React Chat Widget
+import { Widget, addResponseMessage } from 'react-chat-widget';
+ 
+import 'react-chat-widget/lib/styles.css';
 
 //Pages
 import Home from './Pages/Home'
+import FindPage from './Pages/Find'
+
 
 //Containers
 
@@ -34,12 +46,23 @@ class App extends React.Component {
     })
   }
 
+  // useEffect(() => {
+  //   addResponseMessage('Hello, welcome to Food Rescued! How can I help you today?');
+  // }, []);
+
+  //Message Handler for message widget
+  // const handleNewUserMessage = (newMessage) => {
+  //   console.log(`New message incoming! ${newMessage}`);
+    // Now send the message throught the backend API
+    // addResponseMessage(response) <-- Comment this in after back end is linked up
+  // };
+
   render() {
     return (
         <div className="App">
           <Switch>
             <Route 
-              path="/home"
+              path="/"
               render={() =>
                 <Home 
                   currentUser={this.state.currentUser} 
@@ -53,7 +76,17 @@ class App extends React.Component {
                 <SignIn setUser={this.setUser} />
               }
             />
+            <Route path="/find" component={FindPage}>
+              <FindPage></FindPage>
+            </Route>
           </Switch>
+          <Widget
+            // handleNewUserMessage={handleNewUserMessage}
+            profileAvatar={broccoli}
+            title={"FoodRescued Chat"}
+            subtitle={"Connect and trade!"}
+          >
+          </Widget>
         </div>
     )
   }
