@@ -32,6 +32,7 @@ function App() {
   const handleNewUserMessage = (newMessage) => {
     console.log(`New message incoming! ${newMessage}`);
     // Now send the message throught the backend API
+    addResponseMessage('Hey back!')
     // addResponseMessage(response) <-- Comment this in after back end is linked up
   };
   return (
