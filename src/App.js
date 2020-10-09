@@ -45,7 +45,7 @@ class App extends React.Component {
       localStorage.clear()
     })
   }
-  //Will test
+  //Will test number 2
 
   // useEffect(() => {
   //   addResponseMessage('Hello, welcome to Food Rescued! How can I help you today?');
