@@ -45,7 +45,7 @@ class App extends React.Component {
       localStorage.clear()
     })
   }
-  //Will test number 2
+  //Will Test 10/19...
 
   // useEffect(() => {
   //   addResponseMessage('Hello, welcome to Food Rescued! How can I help you today?');
@@ -58,6 +58,8 @@ class App extends React.Component {
     // addResponseMessage(response) <-- Comment this in after back end is linked up
   // };
 
+
+ 
   render() {
     return (
         <div className="App">
